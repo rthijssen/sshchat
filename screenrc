@@ -1,0 +1,17 @@
+sessionname sshchatwindow
+
+caption string "%{kk}XXXXXXX"
+
+screen -t conversation bash
+screen -t input ./chat.sh
+
+select conversation
+split
+
+focus down
+select input
+resize 1
+
+focus up
+screen -t conversation ./read.sh
+focus down
